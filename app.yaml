@@ -1,0 +1,15 @@
+runtime: python39
+service: coba
+
+handlers:
+  - url: /styles
+    static_dir: styles
+    mime_type: text/css
+
+  - url: /.*
+    static_files: index.html
+    upload: index.html
+
+  - url: /(.*\.(js))$
+    static_files: app.js
+    upload: app.js
